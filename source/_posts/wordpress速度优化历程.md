@@ -12,7 +12,7 @@ date: 2020-06-17 22:45:00
 
 博客建立的第一年，我主要采用WP插件的方式优化访问速度，效果不错但是反应速度仍然偏慢，换VPS了正好又是寒假，想着手解决一下这个问题。这篇文章记录了各个阶段使用的方法及其效果。**如果想查看本站目前使用的解决方案，直接翻到最后一页即可。**
 
-## Stage One
+# Stage One
 
 *   使用插件：Autoptimize
 
@@ -20,10 +20,10 @@ date: 2020-06-17 22:45:00
 
 然而用完之后，访问速度还是很慢，所以我开始质疑这款插件的效果（后来发现是自己太幼稚了，那台OpenVZ不能开BBR，1G内存而且疑似高度超售，php能跑得快、网速好才怪呢）。
 
-## Stage Two
+# Stage Two
 
 *   使用插件：Autoptimze、Async Javascript、Redis object cache
-*   <head>修改：preload、preconnect（手动修改）
+*   `<head>`修改：preload、preconnect（手动修改）
 *   主题文件修改（解决国内Google Font不可用的问题）
 
 后来在折腾缓存的时候，偶然发现Redis可以用来给Wordpress加速（一开始也想搞memcache的，发现这台宝塔面板的机子做个Redis然后给WP装个插件弄起来更方便一点）。
@@ -38,16 +38,16 @@ date: 2020-06-17 22:45:00
 font-display: fallback; ，（虽然对主题中的material-icons并没有什么卵用，但是评测分数提升了一些）。
 
 Preload通俗来说就是告知浏览器，网页会在后面用到一些资源，可以提前进行下载。preload字体的话，直接在<head>里写就行（能插header的插件市场里一堆，就连管广告的Ad Inserter都带个修改header/footer的功能），我参考了[这里](https://www.jianshu.com/p/24ffa6d45087)（这篇文章详细介绍了preload的各种用法），在<head>里插入了下面几行代码：
-
+``````html
 <!--
 请根据自己站点使用的字体信息编辑如下内容
 -->
 <link rel="preload" href="/wp-content/themes/realistic/font/KFOmCnqEu92Fr1Mu4mxK.woff2" as="font" type="font/woff2" crossorigin/>
 <link rel="preload" href="/wp-content/themes/realistic/font/KFOlCnqEu92Fr1MmSU5fBBc4.woff2" as="font" type="font/woff2" crossorigin/>
 <link rel="preload" href="/wp-content/themes/realistic/font/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2" as="font" type="font/woff2" crossorigin/>
-
+``````
 此外，还有preconnect，作用是写在<head>里，让客户端提前连接站点，减少加载时间。和下文pagespeed的dns-prefetch有相似之处，但dns-prefetch只是查询DNS，并不连接。
-
+``````html
 <!--
 域名列表请根据自己的情况填写
 -->
@@ -73,21 +73,21 @@ Preload通俗来说就是告知浏览器，网页会在后面用到一些资源�
 <link href='https://public-api.wordpress.com' rel=preconnect />
 <link href='https://www.gravatar.com' rel=preconnect />
 <link href='https://googleads.g.doubleclick.net' rel=preconnect />
-
+``````
 详细配置之后，分数从初始40分左右提高到56分（移动端）。扣分项主要还是TTFB和阻塞渲染的时长这两项。
 
-## Stage Three
+# Stage Three
 
 ![](https://easysvc.xyz/wp-content/uploads/ngx_pagespeed.png)
 
 *   Nginx模块：[ngx\_pagespeed](https://developers.google.com/speed/pagespeed/module/?hl=zh-CN)（其实pagespeed也有Apache的Module）
 *   插件：Redis object cache
-*   <head>修改：preload、preconnect （手动修改）
+*   `<head>`修改：preload、preconnect （手动修改）
 
 用了Cloudflare，56分的成绩在国内某些网络下（没错，说的就是你这个辣鸡联通，就是因为你，Cloudflare成了名副其实的减速CDN）是远远不够用的，还得再找提分点。偶然的机会盯上了pagespeed模块。谷歌出品，必属精品BBR就是谷歌出的一款服务器module，所以想着试试。
 
 Ubuntu 18.04的安装过程（安装前请在[此处](https://www.modpagespeed.com/doc/release_notes)查看最新版本，推荐使用稳定版）：
-
+``````shell
 sudo apt-get install build-essential zlib1g-dev libpcre3 libpcre3-dev unzip uuid-dev
 
 #推荐不要再动除了NPS\_VERSION以外的其他内容。
@@ -104,9 +104,10 @@ psol\_url=https://dl.google.com/dl/page-speed/psol/${NPS\_RELEASE\_NUMBER}.tar.g
 \[ -e scripts/format\_binary\_url.sh \] &amp;&amp; psol\_url=$(scripts/format\_binary\_url.sh PSOL\_BINARY\_URL)
 wget ${psol\_url}
 tar -xzvf $(basename ${psol\_url})  # extracts to psol/
+``````
 
 既然是nginx原来没有的module，当然要下载nginx源码重新编译安装啦，因为我用的宝塔面板，所以找到nginx源码位置/www/server/nginx/src。
-
+``````shell
 cd /www/server/nginx/src
 #需要查看原来安装的nginx的配置
 nginx -V
@@ -118,11 +119,13 @@ make
 sudo make install
 
 #备注：pagespeed也支持以dynamic module的方式被编译及加载，关于dynamic module的详细信息请参考nginx文档。
+``````
 
 （其他系统的安装及配置步骤目前从略，请参考[此处](https://www.modpagespeed.com/doc/build_ngx_pagespeed_from_source)，现在只贴出部分server部分配置代码，但官方文档指出可以在http部分全局开启，然后各分站点详细配置；更详细的配置选项请参考[官网文档](https://www.modpagespeed.com/doc)。）
 
 **警示：请仔细检查下面的配置是否符合站点需要，不正确的配置会导致资源无法访问或者应用运行缓慢。**
 
+```
 #启用Pagespeed
 pagespeed on;
 
@@ -242,16 +245,17 @@ pagespeed EnableFilters in\_place\_optimize\_for\_browser;
 pagespeed LoadFromFile "https://foo.yourdomain/virtual\_path" "/path/to/your/real/resources";
 
 # pagespeed的EnableFilters是支持用","连接的，在nginx里可以写在http{}部分，只占用一行空间，且不用在server{}内重复配置，更为清爽。
+```
 
 警示：对于部分网页，上述功能全开会出现问题，需要详细调试加以排除。
 
 然后我停用了插件，发现自己还是too young, too simple……几乎没什么卵用，阻塞渲染的资源还是那几个JS和死活搞不定的CSS。
 
-## Stage Four
+# Stage Four
 
 *   Nginx模块：[ngx\_pagespeed](https://developers.google.com/speed/pagespeed/module/?hl=zh-CN)
 *   插件：Autoptimize、Redis object cache
-*   <head>修改：Preload、Preconnect（手动修改）
+*   ```<head>```Preload、Preconnect（手动修改）
 
 于是又请回了Autoptimize，至于Async Javascript就不用了，因为pagespeed对js的异步加载处理的很好了。
 
@@ -259,31 +263,32 @@ pagespeed LoadFromFile "https://foo.yourdomain/virtual\_path" "/path/to/your/rea
 
 分数好像又高了那么一丢丢（或许是心理作用）。
 
-## Stage Five
+# Stage Five
 
 *   Nginx模块：[ngx\_pagespeed](https://developers.google.com/speed/pagespeed/module/?hl=zh-CN)
 *   插件：Redis object cache、WP Super Cache
-*   <head>修改：Preload、Preconnect（手动修改）
+*   ```<head>```Preload、Preconnect（手动修改）
 
 启用WP Super Cache，尝试从Wordpress层面生成静态页面，进一步优化TTFB。暴力地开启了预生成静态页面的功能，当爬虫/非注册用户访问的时候，直接提供已经生成的静态页面。最终优化TTFB到0.1秒左右（原来是1秒以上）。详细的非官方配置指导，请参照[这里](https://heikezhinan.com/wp-super-cache-configuration/)。
 
 此外，在查看Pagespeed Console（Pagespeed唯独此页面需要“出国留学”）时，发现了下图所示信息。
 
-![](https://easysvc.xyz/wp-content/uploads/pagespeed_console_capture_1-1024x576.jpg)
+![](/images/pagespeed_console_capture_1.jpg)
 
 翻车现场1（Cache-Control没有设置为public\[默认为private\]）  
 目前原因还不是很明确
 
-![](https://easysvc.xyz/wp-content/uploads/pagespeed_console_capture_2-1024x576.jpg)
+![](/images/pagespeed_console_capture_2.jpg)
 
 翻车现场2（严格来说不能算是翻车，因为外站资源没办法处理的，此处主要是由于使用了Jetpack的图像加速功能，但这及家伙在国内也是名副其实的减速功能，大量图像资源储存在外站）
 
-![](https://easysvc.xyz/wp-content/uploads/pagespeed_console_capture_3-1024x576.jpg)
+![](/images/pagespeed_console_capture_3.jpg)
 
 翻车现场3（尝试从缓存中加载时发现资源已过期）
 
 想到自己博客上的资源是上传了就不会再动的，此外非本域名的一些内容Pagespeed似乎不会进行优化，所以进一步改进pagespeed配置以及nginx对特定资源的expire/Cache-Control设置尝试改善问题。
 
+```
 \# 为非本域名，但仍然由你掌控的资源优化（Authorizing domains），大致要求是添加的站点是由你控制的，也启用了pagespeed
 # ！！！！！！！
 # ！请根据自己网站实际情况进行调整
@@ -320,9 +325,9 @@ location ~ .\*.(woffwoff2)$
     add\_header Cache-Control public,max-age=2592000;
 expires30d;
 }
-
+```
 此外，还可以改善gzip配置来尝试解决问题，也可以试试Brotli，和Pagespeed的配置方式一样，也需要编译安装（此处略）。
-
+```
 \# 当然写在nginx配置里啦
 gzip on;
 gzip\_min\_length 256;
@@ -362,10 +367,11 @@ text/x-cross-domain-policy;
 gzip\_vary on;
 gzip\_proxied any;
 gzip\_disable "MSIE \[1-6\].";
+```
 
 如果不恰当地设置pagespeed Domain（设置了不受自己控制的域名）就会变成这样……
 
-![](https://easysvc.xyz/wp-content/uploads/pagespeed_capture_4-1024x576.png)
+![](/images/pagespeed_capture_4.png)
 
 翻车现场4（不恰当的设置pagespeed Domain导致pagespeed重写url时写成了无法访问的url）  
 我承认前面那几个woff是自己写相对路径写错了
@@ -374,15 +380,16 @@ gzip\_disable "MSIE \[1-6\].";
 
 折腾完这一波，发现Pagespeed Insights得分又降了回来，好气啊。同时发现Pagespeed Console还是那样子，算了算了（听说用了这玩意要常访问站点才能更快有效果？而且好像改一遍nginx设置就会自动清一遍缓存）。
 
-## Stage Six
+# Stage Six
 
 *   Nginx模块：[ngx\_pagespeed](https://developers.google.com/speed/pagespeed/module/?hl=zh-CN)
 *   插件：Redis object cache、WP Super Cache
-*   <head>修改：Preload、Preconnect（手动修改）
+*   修改：```<head>```Preload、Preconnect（手动修改）
 *   使用unix socket（修改配置文件）
 
 根绝某些资料显示，在linux系统中把应用间的通信方式由tcp改为unix socket会提升性能，而Nginx与php、php(wordpress)与MySQL以及redis都支持unix socket通信，故尝试修改配置。
 
+```
 ### Nginx
 
 #注意与php配置前后一致
@@ -412,8 +419,9 @@ define( 'WP\_REDIS\_PATH', '/var/run/redis/redis.sock' );
 
 unixsocket /var/run/redis/redis.sock
 unixsocketperm 777
+```
 
-## 现阶段方案
+# 现阶段方案
 
 因为不知道怎么回事的奇葩操作，原来CentOS的服务器重启后无法引导，数据也全部灭失。我就重新整了个博客（并从谷歌快照里恢复了多数以前的博文），但是我懒得再重新编译Brotli（主要是因为Cloudflare并不能接受源服务器Brotli压缩过的数据）和ngx\_pagespeed，就想着通过插件、nginx配置的调整来实现类似效果。
 
@@ -429,6 +437,7 @@ Site Kit by Google则是Google推出的可用于关联Google旗下Analytics、Se
 
 Gravatar在国内近年来一直无法访问，而Wordpress使用Gravatar则会大幅拖慢博客在国内的访问速度。百度很容易就能找到解决问题的办法，但是代码有点老旧，而且并不能开箱即用。因此我稍加修改做成了一款插件，使用的是iloli的源（此处表示感谢），代码如下。可以自行上传到服务器内使用。
 
+``````php
 <?php
 /\*
  \* Plugin Name: WP Gravatar Customize
@@ -465,14 +474,15 @@ function replace\_avatar($avatar) {
     return $avatar;
 }
 add\_filter( 'get\_avatar', 'replace\_avatar', 10, 3 );
+``````
 
 此外，php的`pm.max_children`等设置也需要调整，过小时会导致站点访问缓慢（具体可查看`/var/log`内的日志）。具体作用及设置这里就不多介绍了。
 
-### 前文部分做法的纠正
+## 前文部分做法的纠正
 
 根据GTmetrix的[建议](https://gtmetrix.com/preconnect-to-required-origins.html)，网站管理者应当仅对重要的第三方资源使用`preconnect`，建议最大同时使用的数量为2，且`preconnect`仅对第三方资源有效。而对于其他必要的第三方资源，可以使用`dns-prefetch`来加快页面加载速度，但是据称Chrome仅能同时处理3个`dns-prefetch`。
 
-## 结束语
+# 结束语
 
 优化终究是有限度的，要么采取插件（或者模块）的形式，要么就升级硬件配置。前者影响代码结构，后者在同样动态生成页面时对TTFB（响应时间）影响更大。当代码优化到极限后，还想白嫖提升速度？不存在的。
 
@@ -480,15 +490,15 @@ add\_filter( 'get\_avatar', 'replace\_avatar', 10, 3 );
 
 因为自己是初学者，所以可能本文会有很多大佬觉得很naive的地方，原理不是很清楚，配置可能也有误或者显得多余，希望大佬在评论区里纠正交流一下。
 
-最后吐槽个Cloudflare，我都对博客域名停用Add HTML的那个APP了，然而还在博客的<head>里乱拉屎（插用不到的JS）。
+最后吐槽个Cloudflare，我都对博客域名停用Add HTML的那个APP了，然而还在博客的`<head>`里乱拉屎（插用不到的JS）。
 
-## 附：Pagespeed部分错误修正提示
+# 附：Pagespeed部分错误修正提示`
 
-### PageSpeed Serf fetch failure rate extremely high; only <num\_1> of <num\_2> recent fetches fully successful
+` PageSpeed Serf fetch failure rate extremely high; only <num\_1> of <num\_2> recent fetches fully successful`
 
 官方Github中的[此issue](https://github.com/apache/incubator-pagespeed-ngx/issues/1562)提及了这个问题，如果您的站点启用了https的话，[这里](https://www.modpagespeed.com/doc/https_support#configuring_ssl_certificates)似乎是针对此问题的解决方案。
 
-## 修订日志
+# 修订日志
 
 20210517：采用了新方案  
 20200617：增加unix socket配置  
