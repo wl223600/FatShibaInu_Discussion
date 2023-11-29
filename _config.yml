@@ -105,3 +105,87 @@ deploy:
   repo: https://github.com/wl223600/Dovecote
   # example, https://github.com/hexojs/hexojs.github.io
   branch: main
+
+# Theme settings
+## Docs: https://theme-next.js.org/muse/docs/theme-settings
+symbols_count_time:
+  symbols: true
+  time: true
+mobile_layout_economy: true
+back2top:
+  # Scroll percent label in b2t button.
+  scrollpercent: true
+reading_progress:
+  enable: true
+  # Available values: left | right
+  start_at: left
+  # Available values: top | bottom
+  position: top
+  reversed: false
+  color: "#37c6c0"
+  height: 2px
+font:
+  # Use custom fonts families or not.
+  # Depended options: `external` and `family`.
+  enable: true
+
+  # Uri of fonts host, e.g. https://fonts.googleapis.com (Default).
+  #host:
+
+  # Font options:
+  # `external: true` will load this font family from `host` above.
+  # `family: Times New Roman`. Without any quotes.
+  # `size: x.x`. Use `em` as unit. Default: 1 (16px)
+
+  # Global font settings used for all elements inside <body>.
+  global:
+    external: false
+    family: PingFang SC, HarmonyOS_Medium, Helvetica Neue, Microsoft YaHei, sans-serif
+    size: 1.125
+
+  # Font settings for site title (.site-title).
+  title:
+    external: false
+    family: PingFang SC, HarmonyOS_Medium, Helvetica Neue, Microsoft YaHei, sans-serif
+    size:
+
+  # Font settings for headlines (<h1> to <h6>).
+  headings:
+    external: false
+    family: PingFang SC, HarmonyOS_Medium, Helvetica Neue, Microsoft YaHei, sans-serif
+    size:
+
+  # Font settings for posts (.post-body).
+  posts:
+    external: false
+    family: PingFang SC, HarmonyOS_Medium, Helvetica Neue, Microsoft YaHei, sans-serif
+
+  # Font settings for <code> and code blocks.
+  codes:
+    external: false
+    family: PT Mono
+
+
+# Preconnect CDN for fonts and plugins.
+# For more information: https://www.w3.org/TR/resource-hints/#preconnect
+preconnect: true
+
+# giscus comment
+giscus:
+  enable: true
+  repo: wl223600/Dovecote # Github repository name
+  repo_id: R_kgDOJzD6bA # Github repository id
+  category: Discussion # Github discussion category
+  category_id: DIC_kwDOJzD6bM4CXay- # Github discussion category id
+  # Available values: pathname | url | title | og:title
+  mapping: pathname
+  # Available values: 0 | 1 
+  reactions_enabled: 1
+   # Available values: 0 | 1 
+  emit_metadata: 1
+  # Available values: light | dark | dark_high_contrast | transparent_dark | preferred-color-scheme
+  theme: light
+  # Available values: en | zh-C
+  lang: zh-CN
+  # Available value: anonymous
+  crossorigin: anonymous
