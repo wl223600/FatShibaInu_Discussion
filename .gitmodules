@@ -1,3 +1,6 @@
 [submodule "themes/next"]
 	path = themes/next
 	url = https://github.com/next-theme/hexo-theme-next
+[submodule "source/lib/pace"]
+	path = source/lib/pace
+	url = https://mirror.ghproxy.com/github.com/theme-next/theme-next-pace
