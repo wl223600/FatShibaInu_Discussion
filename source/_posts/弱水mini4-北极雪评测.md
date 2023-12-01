@@ -25,20 +25,20 @@ Mini 4是现做产品，所以下单后需要等3天左右才能发货，再加�
 
 一系列开箱图
 
-![](https://easysvc.xyz/wp-content/uploads/earphone_remark_07.jpg)
+![](/images/earphone_remark_07.jpg)
 
 纸盒子上面之后弱水的logo和slogan，其他啥也没有（喂你好歹也是个公司啊）。
 
-![](https://easysvc.xyz/wp-content/uploads/earphone_remark_02.jpg)
+![](/images/earphone_remark_02.jpg)
 
 保护套的亲肤质感好评，但是上面有点污渍。
 
-![](https://easysvc.xyz/wp-content/uploads/earphone_remark_04.jpg)
+![](/images/earphone_remark_04.jpg)
 
 耳机壳体透明，上面印着弱水的logo，左淡蓝右正红，可以清晰看到mmcx插座及4个单元。  
 外形与北极雪/mini 2/mini 3采用的浅绿色外壳相似，仅高度略高1.5mm。壳体后端有直径1mm的圆孔，具体作用不明。
 
-![](https://easysvc.xyz/wp-content/uploads/earphone_remark_10.jpg)
+![](/images/earphone_remark_10.jpg)
 
 耳机线材店家没有详细介绍，看上去是镀银铜，我也并没有问。可能这款线材依旧继承了弱水原谅绿（氧化）的血统。那根黑线…一言难尽，可能和北极雪最原始的配线相似吧。
 
@@ -62,6 +62,6 @@ Mini 4是现做产品，所以下单后需要等3天左右才能发货，再加�
 
 再来谈一下北极雪，这款耳机带给我第一次动铁体验。整体表现强于我手头用过的几个廉价动圈。灵敏度高，细节表现力较好，人声耐听，听纯音乐很干净，摇滚类稍微有点吃力，低频下潜还是不够足，稍有齿音，声场算是达到了耳塞的一贯水准吧，和大耳肯定没办法比。总的来说，对得起这个价位。
 
-![](https://easysvc.xyz/wp-content/uploads/earphone_remark_08.jpg)
+![](/images/earphone_remark_08.jpg)
 
 至此，宿舍已有IER-M9，mini 4，北极雪，AKG Y30，WI-1000X和LG HBS-910，怕是要成全班的耳机体验店了。

@@ -26,7 +26,7 @@ date: 2019-05-04 22:42:00
 20200122更新：电池剩余21%。  
 20200204更新：已经没电了……
 
-![](https://easysvc.xyz/wp-content/uploads/battery_pen.png)
+![](/images/battery_pen.png)
 
 作为平板，当然也就不能上桌面级的CPU，4415Y的TDP为6.5W，仅仅为能用的水平，综合参数均比同制程的i5-6200U（15W TDP）有不小差距。续航在4415Y的加持下终于到了3小时耗用35%电量的水平（查看PDF、频繁手写、始终亮屏、使用建议亮度、连接Wifi），对于学生党、出差党够用，不过UWP生态是个问题，哪怕像微信那样上架个商店win32版本也好。
 
@@ -36,7 +36,7 @@ date: 2019-05-04 22:42:00
 
 8+128版本的硬盘应该是nvme ssd，看了一下型号是东芝的KBG30ZPZ128G，入手时百度并没有找到关于此硬盘的太多信息。目前已有详细评测，不知是否受限于处理器，总之表现不符合台式端nvme应有的水平，更类似于SATA，没仔细看通道数量，或许是pcie 3.0 x2。
 
-![](https://easysvc.xyz/wp-content/uploads/win_devmgr-1024x683.png)
+![](/images/win_devmgr.png)
 
 不知表现如何的SSD，以及那块在我这儿表现不佳的高通无线网卡
 
@@ -44,7 +44,7 @@ date: 2019-05-04 22:42:00
 
 最新的Edge已基于Chromium内核（需要用户手动升级），PDF阅读体验一般，虽说目前已支持目录，翻页流畅性、手写支持和旧版相比还是差了点，如果不幸升级了新版，那可以换个PDF阅读器了。不过新版Edge在浏览器方面还是挺合格的。
 
-![](https://easysvc.xyz/wp-content/uploads/edge_pdf-683x1024.jpg)
+![](/images/edge_pdf.jpg)
 
 旧版Edge。医学狗，字丑请谅解
 

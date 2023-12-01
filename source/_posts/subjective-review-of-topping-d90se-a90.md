@@ -12,7 +12,7 @@ date: 2022-02-02 15:45:32
 
 心心念念的拓品旗舰西装套，终于以6500的价格来到了我的手上。本来想买黑色的，可惜闲鱼上它没有啊，倒是有一堆D90（非MQA版）+A90在售，可惜那售价是一副爱买买不买滚的样子。
 
-![](https://easysvc.xyz/wp-content/uploads/IMG20220119190355-1024x770.jpg)
+![](/images/IMG20220119190355.jpg)
 
 Topping D90SE & Topping A90 Silver Version
 
