@@ -13,7 +13,7 @@ date: 2019-02-02 22:32:00
 
 以发表日前发布的最新版7.57.0示例。
 
-\# 安装编译工具
+# 安装编译工具
 ``````shell
 sudo apt-get install git g++ make binutils autoconf automake autotools-dev libtool pkg-config \\
   zlib1g-dev libcunit1-dev libssl-dev libxml2-dev libev-dev libevent-dev libjansson-dev \\
