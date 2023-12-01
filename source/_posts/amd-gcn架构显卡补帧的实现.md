@@ -30,7 +30,7 @@ AMD的补帧算是A卡的“黑科技”之一，不过AMD对此宣传一向是A
 
 1、打开AMD Radeon Settings，点击“视频”选项卡，启用其中的“自定义”设置。自定义清晰度、对比度、亮度按照自己要求调整。“AMD Fluid Motion Video”必须开启（如果找不到该选项，请检查显卡类型是否符合要求，如果确定符合，请先执行第二步）。
 
-![](/images/Radeon-1024x499.png)
+![](/images/Radeon.png)
 
 2、打开Bluesky Frame Rate Converter，进行配置。如果“Driver Setting”下的按钮不是“Initialize AFM Support”，请先点击按钮。系统会提示重启，推荐重启，返回执行第一步。“AFM Mode”不推荐选择“Auto”，笔者R7 M370选择Auto时无法进行补帧，选择“Mode 1”和“Mode 2”均可，前者比较保守，后者相对激进，但两种方式对不同视频有着不同的效果，详情可自行测试。“Rate Convertion”下的“24p”和“30p”均需选中。如果使用过程中发现符合条件的视频仍然不能补帧，请尝试勾选“Skip rate check ……”选项。“Performance”下的两个选项需要开启，其中第二个选项可提升补帧性能，对于笔记本上性能较弱的显卡进行高分辨率视频补帧时尤为有用。设置完成后保存关闭即可。
 
