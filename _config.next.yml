@@ -440,30 +440,30 @@ font:
 
   # Global font settings used for all elements inside <body>.
   global:
-    external: true
+    external: false
     family: "'Noto Serif', 'Noto Serif SC', 'Noto Serif TC', 'Noto Serif CJK SC', 'Noto Serif CJK TC', 'Times New Roman', 'NSimSun', 'SimSun', 'STSong', 'Noto Sans', 'HarmonyOS_Medium', 'OPlusSans 3.0', 'OPPOSans 2.0', 'OPPOSans', 'MiSans', 'Helvetica Neue'"
     size: 1.125
 
   # Font settings for site title (.site-title).
   title:
-    external: true
+    external: false
     family:
     size:
 
   # Font settings for headlines (<h1> to <h6>).
   headings:
-    external: true
+    external: false
     family:
     size:
 
   # Font settings for posts (.post-body).
   posts:
-    external: true
+    external: false
     family:
 
   # Font settings for <code> and code blocks.
   codes:
-    external: true
+    external: false
     family: "'PT Mono'"
 
 
@@ -582,7 +582,7 @@ math:
 
 # Easily enable fast Ajax navigation on your website.
 # For more information: https://github.com/next-theme/pjax
-pjax: false
+pjax: true
 
 # FancyBox is a tool that offers a nice and elegant way to add zooming functionality for images.
 # For more information: https://fancyapps.com/fancybox/
