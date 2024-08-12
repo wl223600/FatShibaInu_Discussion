@@ -12,6 +12,7 @@
     "version": "7.3.0"
   },
   "dependencies": {
+    "@next-theme/plugins": "^8.20.0",
     "hexo": "^7.3.0",
     "hexo-admonition": "^1.1.2",
     "hexo-deployer-git": "^4.0.0",
@@ -37,6 +38,8 @@
     "hexo-tag-steamgame": "^1.0.0",
     "hexo-theme-landscape": "^1.0.0",
     "hexo-theme-next": "^8.20.0",
-    "hexo-word-counter": "^0.2.0"
+    "hexo-word-counter": "^0.2.0",
+    "lozad": "^1.16.0",
+    "pjax": "^0.2.8"
   }
 }

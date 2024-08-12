@@ -1,5 +1,6 @@
 ---
 title: 利用PortSentry防止端口扫描
+description: 本文简单记载了VPS使用PortSentry安装及设置过程。TODO:更新fail2ban+portsentry的组合用法。
 tags:
   - Linux
   - VPS

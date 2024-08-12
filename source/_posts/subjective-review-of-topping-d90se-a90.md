@@ -1,5 +1,6 @@
 ---
 title: Subjective review of Topping D90SE & A90
+description: 脑放惨案，HiFi之光。极其中正的听感，优秀的做工，对得起它们的售价。不过学生还是尽量绕道吧，不要像我这样吃土玩HiFi。
 tags:
   - 耳机
   - 评测

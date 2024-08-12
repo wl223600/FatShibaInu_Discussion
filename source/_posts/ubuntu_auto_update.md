@@ -1,5 +1,6 @@
 ---
 title: Ubuntu设置自动更新
+description: 已经愈发觉得没空折腾VPS，何况是养着两台，安全更新又不能不装，所以打算设置自动更新。
 tags: []
 id: '53'
 categories:

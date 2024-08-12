@@ -1,5 +1,6 @@
 ---
 title: Surface Go评测
+description: 省流：买iPad/安卓平板，如果考虑Surface建议直接上Surface Laptop Studio。
 tags:
   - 评测
 id: '43'

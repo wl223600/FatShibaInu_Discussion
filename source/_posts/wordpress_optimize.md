@@ -1,5 +1,6 @@
 ---
 title: WordPress速度优化历程
+description: 超长，但似乎没什么用的WordPress速度优化教程。老老实实配置好缓存避免php反复揉拧VPS才是王道。
 tags:
   - Nginx
   - Pagespeed

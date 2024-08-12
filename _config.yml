@@ -7,7 +7,7 @@ title: 鸽子窝
 subtitle: 无限进步(想多了)
 description: 咕咕咕
 keywords:
-author: Alex Wang
+author: FatShibaInu
 language: zh-CN
 timezone: Asia/Shanghai
 
@@ -212,3 +212,11 @@ robotstxt:
 # Steam Game Stock
 # reference: https://github.com/HCLonely/hexo-steam-games
 # use hexo steam -u before hexo generate
+
+# local search
+# with npm install hexo-generator-searchdb --save
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000

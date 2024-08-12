@@ -1,5 +1,6 @@
 ---
 title: Ubuntu 16.04 cpanm安装Authen::Libwrap时遇到的问题及解决方法
+description: 又是刚入坑Linux时产生的某个幼稚笔记。
 tags:
   - cpanm
   - Ubuntu

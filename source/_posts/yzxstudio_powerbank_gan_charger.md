@@ -1,5 +1,6 @@
 ---
 title: YZXSTUDIO充电宝&倍思GaN充电器评测
+description: 本来买这玩意是给一加手机+Surface Go充电的，用起来非常不错。但一加现在领先OPPO搞了个私有协议100W（PD 45W）的充电宝出来（虽然没有购买的欲望）。另外，GaN充电头充欧加系设备速度都很慢，暂时把它闲置了。
 tags: []
 id: '33'
 categories:

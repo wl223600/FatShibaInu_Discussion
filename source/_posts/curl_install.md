@@ -1,5 +1,6 @@
 ---
 title: linux下curl的安装
+description: 在博客迁移前的某个时期，由于需要检测网站http2支持，要升级curl版本。本文详细讲解curl的一般安装过程。
 tags:
   - curl
   - Ubuntu
@@ -9,7 +10,7 @@ categories:
 date: 2019-02-02 22:32:00
 ---
 
-笔者使用的Ubuntu正常情况下是带有curl的，不过近期由于需要检测网站http2支持，要升级curl版本。本文详细讲解curl的一般安装过程。
+
 
 以发表日前发布的最新版7.57.0示例。
 

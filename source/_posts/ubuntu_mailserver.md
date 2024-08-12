@@ -1,5 +1,6 @@
 ---
 title: Ubuntu 18.04搭建邮箱笔记(Postfix+Dovecot+mySQL)
+description: （别问，问就是懒得写摘要了）
 tags:
   - Ubuntu
   - 邮箱

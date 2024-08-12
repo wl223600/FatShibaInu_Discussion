@@ -1,5 +1,6 @@
 ---
 title: 《杰克莱恩》第一季简评
+description: 烂尾的好剧，哎。
 tags:
   - 影评
 id: '51'

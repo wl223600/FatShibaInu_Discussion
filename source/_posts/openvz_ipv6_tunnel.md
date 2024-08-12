@@ -1,5 +1,6 @@
 ---
 title: OpenVZ虚拟机使用tb-tun添加IPv6隧道
+description: 现在都是KVM的时代，用户权限高，谁还会看这玩意呢？另外HE的ipv6隧道并没有想象中的好使，Google直接把这玩意的IP段拉黑了。
 tags:
   - IPv6
   - OpenVZ
