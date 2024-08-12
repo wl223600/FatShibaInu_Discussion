@@ -245,7 +245,7 @@ excerpt_description: true
 
 # Read more button
 # If true, the read more button will be displayed in excerpt section.
-read_more_btn: true
+read_more_btn: false
 
 # Post meta display settings
 post_meta:
@@ -365,19 +365,19 @@ codeblock:
   # Code Highlight theme
   # All available themes: https://theme-next.js.org/highlight/
   theme:
-    light: default
-    dark: stackoverflow-dark
+    light: atom-one-light
+    dark: atom-one-dark
   prism:
     light: prism
     dark: prism-dark
   # Add copy button on codeblock
   copy_button:
-    enable: false
+    enable: true
     # Available values: default | flat | mac
-    style:
+    style: default
   # Fold code block
   fold:
-    enable: false
+    enable: true
     height: 500
 
 back2top:
@@ -464,7 +464,7 @@ font:
   # Font settings for <code> and code blocks.
   codes:
     external: false
-    family: "'PT Mono'"
+    family: "'Source Code Pro', 'Noto Mono', 'PT Mono', 'consola'"
 
 
 # ---------------------------------------------------------------
