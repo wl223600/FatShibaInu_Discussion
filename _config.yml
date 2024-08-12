@@ -238,7 +238,7 @@ robotstxt:
 # Steam Game Stock
 # reference: https://github.com/HCLonely/hexo-steam-games
 # use hexo steam -u before hexo generate
-#steam:
+steam:
   enable: true
   steamId: '76561198424400157' #steam 64位Id
   apiKey: E441F01AFBB7CE96951EBE4C062B01A3 #steam api key
