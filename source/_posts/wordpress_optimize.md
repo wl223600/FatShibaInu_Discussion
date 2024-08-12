@@ -494,7 +494,7 @@ add\_filter( 'get\_avatar', 'replace\_avatar', 10, 3 );
 
 最后吐槽个Cloudflare，我都对博客域名停用Add HTML的那个APP了，然而还在博客的`<head>`里乱拉屎（插用不到的JS）。
 
-# 附：Pagespeed部分错误修正提示`
+# 附：Pagespeed部分错误修正提示
 
 ` PageSpeed Serf fetch failure rate extremely high; only <num\_1> of <num\_2> recent fetches fully successful`
 

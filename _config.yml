@@ -8,7 +8,7 @@ subtitle: 无限进步(想多了)
 description: 咕咕咕
 keywords:
 author: Alex Wang
-language: zh-cn
+language: zh-CN
 timezone: Asia/Shanghai
 
 # URL
@@ -172,3 +172,43 @@ sitemap:
   rel: true # add rel_sitemap to the site's header.
   tags: true # add site's tags
   categories: true # add site's categories
+
+# collapse settings
+# reference: https://github.com/ggehuliang/hexo-tag-collapse-spoiler
+# usage:
+# {% collapse(btn|link|card) HINT_SHOW HINT_HIDE %}
+# content
+# {% endcollapse(btn|link|card) %}
+collapse:
+  border: false  # Whether to enable borders for content hidden using 'collapsebtn' and 'collapselink' / 是否开启按钮和链接样式的边框
+  hint_show: Show # Default text for 'Show' operation / 展开默认提示文字
+  hint_hide: Hide # Default text for 'Hide' operation / 收起默认提示文字
+
+# Steam game tag
+# usage reference: https://github.com/HCLonely/hexo-tag-steamgame
+
+# robots.txt
+# reference: https://github.com/leecrossley/hexo-generator-robotstxt
+robotstxt:
+  useragent: "*"
+  disallow:
+    - /vendors/
+    - /js/
+    - /css/
+    - /fonts/
+    - /fancybox/
+  allow:
+    - /
+    - /archives/
+    - /categories/
+    - /tags/
+    - /about/
+  sitemap: /sitemap.xml
+
+# pdf support
+# usage： {% pdf ./bash_freshman.pdf %}
+# reference: https://github.com/superalsrk/hexo-pdf/
+
+# Steam Game Stock
+# reference: https://github.com/HCLonely/hexo-steam-games
+# use hexo steam -u before hexo generate
