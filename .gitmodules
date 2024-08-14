@@ -4,3 +4,6 @@
 [submodule "themes/next"]
 	path = themes/next
 	url = https://github.com/wl223600/hexo-theme-next
+[submodule "source/lib/pdf"]
+	path = source/lib/pdf
+	url = https://github.com/next-theme/theme-next-pdf

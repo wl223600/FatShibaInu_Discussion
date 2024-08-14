@@ -441,7 +441,7 @@ font:
   # Global font settings used for all elements inside <body>.
   global:
     external: false
-    family: "'Noto Serif', 'Noto Serif SC', 'Noto Serif TC', 'Noto Serif CJK SC', 'Noto Serif CJK TC', 'Times New Roman', 'NSimSun', 'SimSun', 'STSong', 'Noto Sans', 'HarmonyOS_Medium', 'OPlusSans 3.0', 'OPPOSans 2.0', 'OPPOSans', 'MiSans', 'Helvetica Neue'"
+    family: "'Noto Serif SC', 'Noto Serif TC', 'Noto Serif CJK SC', 'Noto Serif CJK TC', 'Source Han Serif', 'Source Han Serif HC', 'Source Han Serif TC', 'Noto Serif', 'Times New Roman', 'NSimSun', 'SimSun', 'STSong', 'Noto Sans', 'HarmonyOS_Medium', 'OPlusSans 3.0', 'OPPOSans 2.0', 'OPPOSans', 'MiSans', 'Helvetica Neue'"
     size: 1.125
 
   # Font settings for site title (.site-title).
@@ -464,7 +464,7 @@ font:
   # Font settings for <code> and code blocks.
   codes:
     external: false
-    family: "'Source Code Pro', 'Noto Mono', 'PT Mono', 'consola'"
+    family: "'Monaco', 'Source Code Pro', 'Noto Mono', 'PT Mono'"
 
 
 # ---------------------------------------------------------------
@@ -650,7 +650,7 @@ pace:
   # All available themes:
   # big-counter | bounce | barber-shop | center-atom | center-circle | center-radar | center-simple
   # corner-indicator | fill-left | flat-top | flash | loading-bar | mac-osx | material | minimal
-  theme: material
+  theme: minimal
 
 # Generate a ribbon in your website with HTML5 canvas.
 # For more information: https://github.com/hustcc/ribbon.js
@@ -832,8 +832,8 @@ leancloud_visitors:
 firestore:
   enable: false
   collection: articles # Required, a string collection name to access firestore database
-  apiKey: # Required
-  projectId: # Required
+  apiKey: AIzaSyDcYqGFqIwiryeKnmgN5_2jcXRRyF5-9mE
+  projectId: easysvc-e0bb6
 
 # Show Views / Visitors of the website / page with busuanzi.
 # For more information: http://ibruce.info/2015/04/04/busuanzi/
