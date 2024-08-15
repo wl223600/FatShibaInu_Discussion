@@ -48,6 +48,10 @@ p.admonition-title {
   background-color: rgba(255, 82, 82, .1);
 }
 
+.admonition.note {
+  border-color: #42b983;
+}
+
 .admonition.info,
 .admonition.todo {
   border-color: #00b8d4;
@@ -90,4 +94,12 @@ p.admonition-title {
 
 .admonition>:last-child {
   margin-bottom: 0 !important;
+}
+
+.post-body .note {
+  margin: 1.5625em 0;
+  padding: .6rem;
+  border: 0px;
+  border-radius: .3rem;
+  border-left: .3rem solid #42b983;
 }

@@ -159,6 +159,8 @@ site_state: true
 social:
   GitHub: https://github.com/wl223600 || fab fa-github
   E-Mail: mailto:wl223600@gmail.com || fa fa-envelope
+  BiliBili: https://space.bilibili.com/1112597337 || fab fa-bilibili
+  Steam: https://steamcommunity.com/profiles/76561198424400157 || fab fa-steam
   #Weibo: https://weibo.com/yourname || fab fa-weibo
   #Twitter: https://twitter.com/yourname || fab fa-twitter
   #FB Page: https://www.facebook.com/yourname || fab fa-facebook
