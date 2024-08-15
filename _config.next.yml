@@ -374,10 +374,10 @@ codeblock:
   copy_button:
     enable: true
     # Available values: default | flat | mac
-    style: default
+    style: mac
   # Fold code block
   fold:
-    enable: true
+    enable: false
     height: 500
 
 back2top:
@@ -464,7 +464,8 @@ font:
   # Font settings for <code> and code blocks.
   codes:
     external: false
-    family: "'Monaco', 'Source Code Pro', 'Noto Mono', 'PT Mono'"
+    family: "'Monaco', 'Source Code Pro', 'Noto Sans Mono', 'Noto Mono', 'PT Mono'"
+    size: 0.875
 
 
 # ---------------------------------------------------------------

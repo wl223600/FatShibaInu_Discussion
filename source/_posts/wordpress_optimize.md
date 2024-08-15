@@ -88,7 +88,7 @@ Preload通俗来说就是告知浏览器，网页会在后面用到一些资源�
 用了Cloudflare，56分的成绩在国内某些网络下（没错，说的就是你这个辣鸡联通，就是因为你，Cloudflare成了名副其实的减速CDN）是远远不够用的，还得再找提分点。偶然的机会盯上了pagespeed模块。谷歌出品，必属精品BBR就是谷歌出的一款服务器module，所以想着试试。
 
 Ubuntu 18.04的安装过程（安装前请在[此处](https://www.modpagespeed.com/doc/release_notes)查看最新版本，推荐使用稳定版）：
-``````shell
+``````bash
 sudo apt-get install build-essential zlib1g-dev libpcre3 libpcre3-dev unzip uuid-dev
 
 #推荐不要再动除了NPS\_VERSION以外的其他内容。
@@ -108,7 +108,7 @@ tar -xzvf $(basename ${psol\_url})  # extracts to psol/
 ``````
 
 既然是nginx原来没有的module，当然要下载nginx源码重新编译安装啦，因为我用的宝塔面板，所以找到nginx源码位置/www/server/nginx/src。
-``````shell
+``````bash
 cd /www/server/nginx/src
 #需要查看原来安装的nginx的配置
 nginx -V
@@ -126,7 +126,7 @@ sudo make install
 
 **警示：请仔细检查下面的配置是否符合站点需要，不正确的配置会导致资源无法访问或者应用运行缓慢。**
 
-```
+```ini
 #启用Pagespeed
 pagespeed on;
 
@@ -289,7 +289,7 @@ pagespeed LoadFromFile "https://foo.yourdomain/virtual\_path" "/path/to/your/rea
 
 想到自己博客上的资源是上传了就不会再动的，此外非本域名的一些内容Pagespeed似乎不会进行优化，所以进一步改进pagespeed配置以及nginx对特定资源的expire/Cache-Control设置尝试改善问题。
 
-```
+```ini
 \# 为非本域名，但仍然由你掌控的资源优化（Authorizing domains），大致要求是添加的站点是由你控制的，也启用了pagespeed
 # ！！！！！！！
 # ！请根据自己网站实际情况进行调整

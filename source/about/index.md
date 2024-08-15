@@ -77,9 +77,3 @@ Github：wl223600
 ## 勋章墙？（算是吧）
 
  [![AbuseIPDB Contributor Badge](https://www.abuseipdb.com/contributor/75921.svg)](https://www.abuseipdb.com/user/75921 "AbuseIPDB is an IP address blacklist for webmasters and sysadmins to report IP addresses engaging in abusive behavior on their networks") 
-
-@
-
-[MEMBER OF PROJECT HONEY POT](http://www.projecthoneypot.org/)  
-[Spam Harvester Protection Network  
-provided by Unspam](http://www.unspam.com)

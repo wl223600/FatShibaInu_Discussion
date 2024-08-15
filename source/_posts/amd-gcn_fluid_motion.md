@@ -41,8 +41,6 @@ AMD的补帧算是A卡的“黑科技”之一，不过AMD对此宣传一向是A
 
 ![](/images/BFC.png)
 
-![](/images/2018/02/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE38.png)
-
 3、这里以PotPlayer为例，说明启用补帧的过程。
 
 （1）打开PotPlayer，点击菜单内的“选项”；
@@ -52,8 +50,6 @@ AMD的补帧算是A卡的“黑科技”之一，不过AMD对此宣传一向是A
 （3）更改“Bluesky Frame Rate Converter”的优先顺序为“强制使用”。
 
 ![](/images/PotPlayer.png)
-
-![](/images/2018/02/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE41.png)
 
 ## 注意事项
 
