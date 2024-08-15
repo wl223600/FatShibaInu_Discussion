@@ -170,6 +170,7 @@ robotstxt:
     - /css/
     - /fonts/
     - /fancybox/
+    - /images/
   allow:
     - /
     - /archives/

@@ -103,3 +103,12 @@ p.admonition-title {
   border-radius: .3rem;
   border-left: .3rem solid #42b983;
 }
+
+/* body blockquote {
+  font-size: 1rem;
+  page-break-inside: avoid;
+  border-left: .3rem solid #ddd;
+  border-radius: .3rem;
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, .05), 0 0 0.05rem rgba(0, 0, 0, .1);
+  background: var(--card-bg-color);
+} */
