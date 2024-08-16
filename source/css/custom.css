@@ -1,31 +1,76 @@
 .post-copyright ul {
-    list-style: none;
-    position: relative;
-    background: var(--card-bg-color);
-    margin: 1.5625em 0;
-    padding: .6rem;
-    overflow: hidden;
-    font-size: 1rem;
-    page-break-inside: avoid;
-    border-left: .3rem solid #42b983;
-    border-radius: .3rem;
-    box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, .05), 0 0 0.05rem rgba(0, 0, 0, .1);
-    /* background-color: #fafafa; */
+  list-style: none;
+  position: relative;
+  background: var(--card-bg-color);
+  margin: 1.5625em 0;
+  padding: .6rem;
+  overflow: hidden;
+  font-size: 1rem;
+  page-break-inside: avoid;
+  border-left: .3rem solid #42b983;
+  border-radius: .3rem;
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, .05), 0 0 0.05rem rgba(0, 0, 0, .1);
+  /* background-color: #fafafa; */
 }
 
 .post-copyright ul::after {
-    content: '\f25e';
-    font-family: 'Font Awesome 6 Brands';
-    font-size: 200px;
-    opacity: 0.1;
-    position: absolute;
-    right: -50px;
-    top: -150px;
+  content: '\f25e';
+  font-family: 'Font Awesome 6 Brands';
+  font-size: 200px;
+  opacity: 0.1;
+  position: absolute;
+  right: -50px;
+  top: -150px;
 }
 
 figure.highlight {
-    box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, .05), 0 0 0.05rem rgba(0, 0, 0, .1);
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, .05), 0 0 0.05rem rgba(0, 0, 0, .1);
+}
+
+body .steam-game-item {
+  background: var(--card-bg-color) !important;
+  border-radius: .3rem !important;
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, .05), 0 0 0.05rem rgba(73, 65, 65, 0.1) !important;
+  border-left: 4px solid #1b2838 !important;
+}
+
+body .steam-game-picture img {
+  border-radius: .3rem !important;
+}
+
+@media screen and (max-width: 600px) {
+  body .steam-game-item {
+    width: inherit !important;
+    margin: 0;
   }
+}
+
+body .steam-game-title {
+  text-align: left !important;
+  line-height: 1.6 !important;
+}
+
+body .steam-game-title a {
+  color: var(--text-color) !important;
+}
+
+body .steam-game-title a:hover {
+  border-bottom-color: var(--link-hover-color) !important;
+  color: var(--link-hover-color) !important;
+}
+
+body .steam-game-info-time {
+  color: var(--blockquote-color) !important;
+}
+
+body .steam-game-pagination {
+  margin-bottom: 0px !important;
+}
+
+body .steam-game-link {
+  text-align: left !important;
+}
+
 
 body .steam-game-button {
   line-height: 2;
@@ -47,18 +92,26 @@ body .steam-game-button:hover {
   background: var(--btn-default-hover-bg) !important;
   border-color: var(--btn-default-hover-border-color) !important;
   color: var(--btn-default-hover-color) !important;
+  transform: none !important;
 }
 
-body .steam-game-item {
-  background: var(--card-bg-color) !important;
-  border-radius: .3rem !important;
-  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, .05), 0 0 0.05rem rgba(0, 0, 0, .1) !important;
-  border-left: 4px solid #ddd !important;
+@media (max-width: 480px) {
+  body .steam-game-info {
+    margin: 0 !important;
+    padding-top: calc(20% + 40px) !important;
+    padding-left: 0 !important;
+    height: auto !important;
+  }
 }
 
-body .steam-game-pagination {
-  margin-bottom: 0px !important;
+@media (max-width: 400px) {
+  body .steam-game-picture {
+    width: 188px !important;
+    height: 99px !important;
+    left: 20px !important;
+  }
 }
+
 /* 
 blockquote {
     border-left: .3rem solid #ddd;
