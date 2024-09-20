@@ -12,7 +12,7 @@
     "version": "7.3.0"
   },
   "dependencies": {
-    "@next-theme/plugins": "^8.20.0",
+    "@next-theme/plugins": "^8.21.0",
     "animate.css": "^4.1.1",
     "hexo": "^7.3.0",
     "hexo-admonition": "^1.1.2",
